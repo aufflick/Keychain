@@ -14,15 +14,15 @@ import Security
  *
  *  - Author: Ardalan Samimi
  *
- *  - Version: 0.3.0
+ *  - Version: 0.2.2
  *
  *  - Requires: iOS 8.0
  *
- *  - SeeAlso: [Keychain Reference](http://cocoadocs.org/docsets/Keychain/0.3.0/index.html)
+ *  - SeeAlso: [Keychain Reference](http://cocoadocs.org/docsets/Keychain/0.2.2/index.html)
  */
 public struct Keychain {
   
-  static let service: String = Bundle.main.bundleIdentifier ?? ""
+  static let service: String = NSBundle.mainBundle().bundleIdentifier ?? ""
   
   // MARK: - Basic Keychain Methods
   /**
@@ -34,14 +34,14 @@ public struct Keychain {
    *
    *  - Returns: True if operation was successful.
    */
-  public static func save(_ value: String, forKey key: String) -> Bool {
+  public static func save(value: String, forKey key: String) -> Bool {
     let query: [String: AnyObject] = [
-      kSecClass as String       : (kSecClassGenericPassword as NSString),
-      kSecAttrAccount as String : key as AnyObject,
-      kSecAttrService as String : self.service as AnyObject,
-      kSecValueData as String   : value.data(using: String.Encoding.utf8, allowLossyConversion: false)! as AnyObject
+      kSecClass as String       : kSecClassGenericPassword as String,
+      kSecAttrAccount as String : key,
+      kSecAttrService as String : self.service,
+      kSecValueData as String   : value.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
     ]
-
+    
     return self.secItemAdd(query) == noErr
   }
   /**
@@ -51,17 +51,17 @@ public struct Keychain {
    *
    *  - Returns: A string value.
    */
-  public static func load(_ key: String) -> String? {
+  public static func load(key: String) -> String? {
     let query: [String: AnyObject] = [
-      kSecClass as String       : kSecClassGenericPassword as NSString,
+      kSecClass as String       : kSecClassGenericPassword as String,
       kSecMatchLimit as String  : kSecMatchLimitOne,
       kSecReturnData as String  : kCFBooleanTrue,
-      kSecAttrService as String : self.service as AnyObject,
-      kSecAttrAccount as String : key as AnyObject
+      kSecAttrService as String : self.service,
+      kSecAttrAccount as String : key
     ]
     
-    if let value = self.secItemCopy(query).data as? Data {
-      return String(data: value, encoding: String.Encoding.utf8)!
+    if let value = self.secItemCopy(query).data as? NSData {
+      return String(data: value, encoding: NSUTF8StringEncoding)!
     }
     
     return nil
@@ -73,11 +73,11 @@ public struct Keychain {
    *
    *  - Returns: A boolean value.
    */
-  public static func delete(_ key: String) -> Bool {
+  public static func delete(key: String) -> Bool {
     let query: [String: AnyObject] = [
-      kSecClass as String       : kSecClassGenericPassword as NSString,
-      kSecAttrService as String : self.service as AnyObject,
-      kSecAttrAccount as String : key as AnyObject
+      kSecClass as String       : kSecClassGenericPassword as String,
+      kSecAttrService as String : self.service,
+      kSecAttrAccount as String : key
     ]
     
     return self.secItemDelete(query) == noErr
@@ -96,7 +96,7 @@ public struct Keychain {
    *
    *  - Returns: A tuple with two members, reflecting the status of the operation.
    */
-  public static func save(_ attributes: [String: AnyObject]) -> (success: Bool, statusCode: OSStatus) {
+  public static func save(attributes: [String: AnyObject]) -> (success: Bool, statusCode: OSStatus) {
     let status = self.secItemAdd(attributes)
     
     return (success: (status == noErr), statusCode: status)
@@ -113,7 +113,7 @@ public struct Keychain {
    *
    *  - Returns: A tuple with three members, reflecting the status of the operation and the data fetched, if any.
    */
-  public static func load(_ query: [String: AnyObject]) -> (success: Bool, statusCode: OSStatus, data: AnyObject?) {
+  public static func load(query: [String: AnyObject]) -> (success: Bool, statusCode: OSStatus, data: AnyObject?) {
     let result = secItemCopy(query)
     
     return (success: (result.status == errSecSuccess), statusCode: result.status, data: result.data)
@@ -131,7 +131,7 @@ public struct Keychain {
    *
    *  - Returns: A tuple with three members, reflecting the status of the operation and the data fetched, if any.
    */
-  public static func update(_ query: [String: AnyObject], attributes: [String: AnyObject]) -> (success: Bool, statusCode: OSStatus) {
+  public static func update(query: [String: AnyObject], attributes: [String: AnyObject]) -> (success: Bool, statusCode: OSStatus) {
     let result = secItemUpdate(query, attributes: attributes)
     return (success: (result == noErr), statusCode: result)
   }
@@ -147,7 +147,7 @@ public struct Keychain {
    *
    *  - Returns: A tuple with two members, reflecting the status of the operation.
    */
-  public static func delete(_ query: [String: AnyObject]) -> (success: Bool, statusCode: OSStatus) {
+  public static func delete(query: [String: AnyObject]) -> (success: Bool, statusCode: OSStatus) {
     let result = secItemDelete(query)
     return (success: (result == noErr), statusCode: result)
   }
@@ -156,26 +156,26 @@ public struct Keychain {
 
 private extension Keychain {
   
-  static func secItemCopy(_ query: [String: AnyObject]) -> (status: OSStatus, data: AnyObject?) {
+  static func secItemCopy(query: [String: AnyObject]) -> (status: OSStatus, data: AnyObject?) {
     var result: AnyObject?
-    let status: OSStatus = withUnsafeMutablePointer(to: &result) {
-      SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+    let status: OSStatus = withUnsafeMutablePointer(&result) {
+      SecItemCopyMatching(query as CFDictionaryRef, UnsafeMutablePointer($0))
     }
     
     return (status, result)
   }
 
-  static func secItemAdd(_ attributes: [String: AnyObject]) -> OSStatus {
-    _ = self.secItemDelete(attributes)
-    return SecItemAdd(attributes as CFDictionary, nil)
+  static func secItemAdd(attributes: [String: AnyObject]) -> OSStatus {
+    self.secItemDelete(attributes)
+    return SecItemAdd(attributes, nil)
   }
   
-  static func secItemUpdate(_ query: [String: AnyObject], attributes: [String: AnyObject]) -> OSStatus {
-    return SecItemUpdate(query as CFDictionary, attributes as CFDictionary)
+  static func secItemUpdate(query: [String: AnyObject], attributes: [String: AnyObject]) -> OSStatus {
+    return SecItemUpdate(query, attributes)
   }
   
-  static func secItemDelete(_ query: [String: AnyObject]) -> OSStatus {
-    return SecItemDelete(query as CFDictionary)
+  static func secItemDelete(query: [String: AnyObject]) -> OSStatus {
+    return SecItemDelete(query as CFDictionaryRef)
   }
   
 }

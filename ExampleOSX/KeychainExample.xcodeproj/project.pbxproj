@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		643C7A751DCCA22800DDE5CF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643C7A741DCCA22800DDE5CF /* main.swift */; };
+		6492E80D1DCCA7D6009A663A /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6492E8081DCCA7D6009A663A /* Keychain.swift */; };
+		6492E80E1DCCA7D6009A663A /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6492E8091DCCA7D6009A663A /* KeychainItem.swift */; };
+		6492E80F1DCCA7D6009A663A /* KeychainItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6492E80A1DCCA7D6009A663A /* KeychainItemClass.swift */; };
+		6492E8101DCCA7D6009A663A /* KeychainItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6492E80B1DCCA7D6009A663A /* KeychainItemFactory.swift */; };
+		6492E8111DCCA7D6009A663A /* KeychainProtocolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6492E80C1DCCA7D6009A663A /* KeychainProtocolType.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		643C7A6F1DCCA22800DDE5CF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3268728B953430AC631B663B /* Pods_KeychainExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeychainExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		643C7A711DCCA22800DDE5CF /* KeychainExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KeychainExample; sourceTree = BUILT_PRODUCTS_DIR; };
+		643C7A741DCCA22800DDE5CF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		6492E8071DCCA7D6009A663A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		6492E8081DCCA7D6009A663A /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		6492E8091DCCA7D6009A663A /* KeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
+		6492E80A1DCCA7D6009A663A /* KeychainItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemClass.swift; sourceTree = "<group>"; };
+		6492E80B1DCCA7D6009A663A /* KeychainItemFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemFactory.swift; sourceTree = "<group>"; };
+		6492E80C1DCCA7D6009A663A /* KeychainProtocolType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainProtocolType.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		643C7A6E1DCCA22800DDE5CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		643C7A681DCCA22800DDE5CF = {
+			isa = PBXGroup;
+			children = (
+				6492E8061DCCA7D6009A663A /* Classes */,
+				643C7A731DCCA22800DDE5CF /* KeychainExample */,
+				643C7A721DCCA22800DDE5CF /* Products */,
+				F031EDC33C64BFC1E8B3CA50 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		643C7A721DCCA22800DDE5CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				643C7A711DCCA22800DDE5CF /* KeychainExample */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		643C7A731DCCA22800DDE5CF /* KeychainExample */ = {
+			isa = PBXGroup;
+			children = (
+				643C7A741DCCA22800DDE5CF /* main.swift */,
+			);
+			path = KeychainExample;
+			sourceTree = "<group>";
+		};
+		6492E8061DCCA7D6009A663A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6492E8071DCCA7D6009A663A /* .gitkeep */,
+				6492E8081DCCA7D6009A663A /* Keychain.swift */,
+				6492E8091DCCA7D6009A663A /* KeychainItem.swift */,
+				6492E80A1DCCA7D6009A663A /* KeychainItemClass.swift */,
+				6492E80B1DCCA7D6009A663A /* KeychainItemFactory.swift */,
+				6492E80C1DCCA7D6009A663A /* KeychainProtocolType.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F031EDC33C64BFC1E8B3CA50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3268728B953430AC631B663B /* Pods_KeychainExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		643C7A701DCCA22800DDE5CF /* KeychainExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 643C7A781DCCA22800DDE5CF /* Build configuration list for PBXNativeTarget "KeychainExample" */;
+			buildPhases = (
+				643C7A6D1DCCA22800DDE5CF /* Sources */,
+				643C7A6E1DCCA22800DDE5CF /* Frameworks */,
+				643C7A6F1DCCA22800DDE5CF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeychainExample;
+			productName = KeychainExample;
+			productReference = 643C7A711DCCA22800DDE5CF /* KeychainExample */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		643C7A691DCCA22800DDE5CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "The High Technology Bureau";
+				TargetAttributes = {
+					643C7A701DCCA22800DDE5CF = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 643C7A6C1DCCA22800DDE5CF /* Build configuration list for PBXProject "KeychainExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 643C7A681DCCA22800DDE5CF;
+			productRefGroup = 643C7A721DCCA22800DDE5CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				643C7A701DCCA22800DDE5CF /* KeychainExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		643C7A6D1DCCA22800DDE5CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				643C7A751DCCA22800DDE5CF /* main.swift in Sources */,
+				6492E80D1DCCA7D6009A663A /* Keychain.swift in Sources */,
+				6492E8101DCCA7D6009A663A /* KeychainItemFactory.swift in Sources */,
+				6492E8111DCCA7D6009A663A /* KeychainProtocolType.swift in Sources */,
+				6492E80E1DCCA7D6009A663A /* KeychainItem.swift in Sources */,
+				6492E80F1DCCA7D6009A663A /* KeychainItemClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		643C7A761DCCA22800DDE5CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		643C7A771DCCA22800DDE5CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+		643C7A791DCCA22800DDE5CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		643C7A7A1DCCA22800DDE5CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		643C7A6C1DCCA22800DDE5CF /* Build configuration list for PBXProject "KeychainExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				643C7A761DCCA22800DDE5CF /* Debug */,
+				643C7A771DCCA22800DDE5CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		643C7A781DCCA22800DDE5CF /* Build configuration list for PBXNativeTarget "KeychainExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				643C7A791DCCA22800DDE5CF /* Debug */,
+				643C7A7A1DCCA22800DDE5CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 643C7A691DCCA22800DDE5CF /* Project object */;
+}
